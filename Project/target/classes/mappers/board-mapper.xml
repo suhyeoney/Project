@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace를 파일 이름과 같게 하면 xml을 사용한 SQL 문장 사용이 가능하다 -->
+<mapper namespace="edu.spring.project.mappers.BoardMapper">
+	<insert id="insertNoticeBoard">
+		insert into ${} (${}, ${}, ${})
+		values (#{}, #{}, #{})
+	</insert>
+
+</mapper>
+
+	
