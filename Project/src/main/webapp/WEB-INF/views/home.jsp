@@ -25,6 +25,7 @@
 			Welcome, ${loginId}
 			<button id="btnLogout">로그아웃</button>
 		</c:if>
+		<li><a href="/project/game/game">Game Start!!</a></li>
 	</ul>
 </nav>
 
