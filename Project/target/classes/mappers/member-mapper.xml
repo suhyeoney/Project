@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.spring.project.mappers.MemberMapper">
+	<insert id="insertMember" >
+		insert into ${table_member} (${col_member_id}, ${col_member_password}, 
+		${col_member_name}, ${col_member_email}, ${col_member_account},
+		${col_member_gamescore})
+		values (#{id}, #{password}, #{name}, 
+		#{email}, #{account}, #{gamescore})
+	</insert>
+	
+	<select id="checkUserid" resultType="Member">
+		select * from ${table_member}
+		where ${col_member_id} = #{id}
+	</select>
+	
+	<select id="login" resultType="Member">
+		select * from ${table_member}
+		where ${col_member_id} = #{id} and ${col_member_password} = #{password}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
