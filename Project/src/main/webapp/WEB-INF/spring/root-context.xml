@@ -43,8 +43,13 @@
 	</context:component-scan>
 	
 	<mybatis-spring:scan base-package="edu.spring.project.mappers"/>
-
 	
+	<!-- 
+	<bean id="logger"
+		class="edu.spring.ex04.logutil.ImproveLogger">
+	</bean>
+	 -->
+	 
 	<!-- AOP 기능 사용: Aspect 클래스(@Aspect)의 메소드들을 자동으로 실행 -->
 	<aop:aspectj-autoproxy />
 	<!-- <aop:config proxy-target-class="true"/> -->
