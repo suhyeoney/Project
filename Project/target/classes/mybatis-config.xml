@@ -15,9 +15,9 @@
 		<property name="col_noticeboard_content" value="noticeboard_content" />
 		<property name="col_date" value="date" />
 
-		<property name="tbl_member" value="tbl_member" />
+		<property name="table_member" value="tbl_member" />
 		<property name="col_member_no" value="member_no" />
-		<property name="col_member_id" value="member_id" />
+		<property name="col_member_id"  value="member_id" />
 		<property name="col_member_password" value="member_password" />
 		<property name="col_member_name" value="member_name" />
 		<property name="col_member_email" value="member_email" />
