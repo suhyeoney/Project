@@ -7,25 +7,30 @@
 <configuration>
 	<!-- 테이블의 이름, 컬럼 이름들 상수를 정의 -->
 	<properties> <!-- 1개만 정의 가능 -->
-		<property name="tbl_noticeboard" value="tbl_noticeboard"/>
-		<property name="col_noticeboard_no" value="noticeboard_no"/>
-		<property name="col_noticeboard_rno" value="noticeboard_rno"/>
-		<property name="col_noticeboard_title" value="noticeboard_title"/>
-		<property name="col_noticeboard_title" value="noticeboard_title"/>
-		<property name="col_noticeboard_content" value="noticeboard_content"/>
-		<property name="col_date" value="date"/>
-		
-		
-		
-		
+		<property name="tbl_noticeboard" value="tbl_noticeboard" />
+		<property name="col_noticeboard_no" value="noticeboard_no" />
+		<property name="col_noticeboard_rno" value="noticeboard_rno" />
+		<property name="col_noticeboard_title" value="noticeboard_title" />
+		<property name="col_noticeboard_title" value="noticeboard_title" />
+		<property name="col_noticeboard_content" value="noticeboard_content" />
+		<property name="col_date" value="date" />
+
+		<property name="tbl_member" value="tbl_member" />
+		<property name="col_member_no" value="member_no" />
+		<property name="col_member_id" value="member_id" />
+		<property name="col_member_password" value="member_password" />
+		<property name="col_member_name" value="member_name" />
+		<property name="col_member_email" value="member_email" />
+		<property name="col_member_account" value="member_account" />
+		<property name="col_member_gamescore" value="member_gamescore" />
 	</properties>
-	
+
 	<!-- MyBatis 프레임워크에서 select의 결과를 저장할 Model 클래스(VO)를 찾기 위해서 -->
 	<typeAliases>
 		<!-- 아래 폴더에서 Model 클래스를 찾음 -->
-		<package name="edu.spring.spring.domain"/>
+		<package name="edu.spring.project.domain" />
 	</typeAliases>
-	
+
 </configuration>
 
 

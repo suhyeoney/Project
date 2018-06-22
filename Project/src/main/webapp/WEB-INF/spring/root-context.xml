@@ -2,10 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- dataSource: 스프링 프레임워크가 생성하는 Connection Pool 객체 -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
@@ -15,7 +20,7 @@
 		<property name="username" value="scott" />
 		<property name="password" value="tiger" />
 	</bean>
-		
+	
 	<bean id="sessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -30,10 +35,21 @@
 		destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory"
 			ref="sessionFactory" />
-	</bean>	
+	</bean>
 	
 	<context:component-scan base-package="edu.spring.project">
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:exclude-filter type="annotation" 
+			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	
+	<mybatis-spring:scan base-package="edu.spring.project.mappers"/>
+
+	
+	<!-- AOP 기능 사용: Aspect 클래스(@Aspect)의 메소드들을 자동으로 실행 -->
+	<aop:aspectj-autoproxy />
+	<!-- <aop:config proxy-target-class="true"/> -->
 </beans>
+
+
+
+
